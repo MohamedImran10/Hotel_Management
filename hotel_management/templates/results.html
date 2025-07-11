@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query Results</title>
+    <style>
+        body {
+            background-color: lightgoldenrodyellow;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>  
+    <center><h1>Hotel Management System</h1></center>
+    <h2>Enter SQL Query</h2>
+    <form method="POST" action="/">
+        <textarea name="query" rows="4" cols="50" placeholder="Enter your SQL query here"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    {% if success_message %}
+        <p style="color: green;">{{ success_message }}</p>
+    {% endif %}
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    {% if query_result %}
+        <h2>Query Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    {% for column in column_names %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in query_result %}
+                    <tr>
+                        {% for column in row %}
+                            <td>{{ column }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>
