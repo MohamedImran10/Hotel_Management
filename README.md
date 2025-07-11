@@ -1,4 +1,4 @@
-# Hotel_Management
+# Dynamic Query Interface for Hotel Management
 
 💡**Overview**
 
@@ -28,12 +28,14 @@ mysql-connector-python
 
 💻 **Screenshots**
 
+<img width="1913" height="857" alt="Screenshot From 2025-07-11 14-48-52" src="https://github.com/user-attachments/assets/bc20228d-35f8-4219-8465-7600cf0ec2ae" />
 
 🚀 **Setup Instructions**
 
 1.Clone the repository.
 
-2.Install dependencies: pip install -r requirements.txt.
+2.Install dependenc
+ies: pip install -r requirements.txt.
 
 3.Update DB credentials in app.py.
 
